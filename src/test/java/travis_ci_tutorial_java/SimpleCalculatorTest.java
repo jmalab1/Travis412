@@ -1,14 +1,29 @@
 package travis_ci_tutorial_java;
 
-import java.util.*;
-
 import static org.junit.Assert.*;
 import org.junit.*;
 
 public class SimpleCalculatorTest {
+	
+	private SimpleCalculator calc = new SimpleCalculator();
+		
 	@Test
 	public void testAdd() {
-		SimpleCalculator calc = new SimpleCalculator();
-		assertEquals(calc.add(1, 1), 2);
+		assertEquals(this.calc.add(1, 1), 2);
+	}
+	
+	@Test
+	public void testMinus() {
+		assertEquals(this.calc.minus(5, 3), 2);
+	}
+	
+	@Test
+	public void testMultiply() {
+		assertEquals(this.calc.multiply(2, 2), 4);
+	}
+	
+	@Test
+	public void testDivide() {
+		assertEquals(this.calc.divide(4, 2), 2);
 	}
 }
